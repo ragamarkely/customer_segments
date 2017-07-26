@@ -1,6 +1,10 @@
 # Content: Unsupervised Learning
 ## Project: Creating Customer Segments
 
+This project is part of Udacity Machine Learning Engineer Nanodegree. The
+followings are project instructions and guidelines. The project report is
+provided in `customer_segments.ipynb` or `customer_segments.html`.
+
 ### Install
 
 This project requires **Python 2.7** and the following Python libraries installed:
@@ -12,7 +16,7 @@ This project requires **Python 2.7** and the following Python libraries installe
 
 You will also need to have software installed to run and execute a [Jupyter Notebook](http://ipython.org/notebook.html)
 
-If you do not have Python installed yet, it is highly recommended that you install the [Anaconda](http://continuum.io/downloads) distribution of Python, which already has the above packages and more included. Make sure that you select the Python 2.7 installer and not the Python 3.x installer. 
+If you do not have Python installed yet, it is highly recommended that you install the [Anaconda](http://continuum.io/downloads) distribution of Python, which already has the above packages and more included. Make sure that you select the Python 2.7 installer and not the Python 3.x installer.
 
 ### Code
 
@@ -39,11 +43,11 @@ The customer segments data is included as a selection of 440 data points collect
 Note (m.u.) is shorthand for *monetary units*.
 
 **Features**
-1) `Fresh`: annual spending (m.u.) on fresh products (Continuous); 
-2) `Milk`: annual spending (m.u.) on milk products (Continuous); 
-3) `Grocery`: annual spending (m.u.) on grocery products (Continuous); 
+1) `Fresh`: annual spending (m.u.) on fresh products (Continuous);
+2) `Milk`: annual spending (m.u.) on milk products (Continuous);
+3) `Grocery`: annual spending (m.u.) on grocery products (Continuous);
 4) `Frozen`: annual spending (m.u.) on frozen products (Continuous);
 5) `Detergents_Paper`: annual spending (m.u.) on detergents and paper products (Continuous);
-6) `Delicatessen`: annual spending (m.u.) on and delicatessen products (Continuous); 
+6) `Delicatessen`: annual spending (m.u.) on and delicatessen products (Continuous);
 7) `Channel`: {Hotel/Restaurant/Cafe - 1, Retail - 2} (Nominal)
-8) `Region`: {Lisbon - 1, Oporto - 2, or Other - 3} (Nominal) 
+8) `Region`: {Lisbon - 1, Oporto - 2, or Other - 3} (Nominal)
