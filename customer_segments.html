@@ -12092,9 +12092,9 @@ div#notebook {
 <p><strong>Answer:</strong></p>
 <p>To facilitate the analysis, I plotted the distribution of the total purchase cost for all customers on a boxplot together with the 3 samples.</p>
 <ul>
-<li>The first sample (customer 5) has a purchase pattern similar to a cafe. The purchase of milk higher than 75th percentile and the purchase of frozen food is significantly lower than the 25th percentile. The total purchase of grocery is only at the median level. This customer maybe selling products produced using milk, such as coffee store, dessert cafe, etc. </li>
-<li>The second sample (customer 10) has a purchase pattern similar to a supermarket. The total purchase of grocery, frozen food, paper, and detergent products are higher than 75th quantile. This supermarket may have less emphasis on fresh products as its total purchase is close to the 25th quantile.</li>
-<li>The third sample (customer 25) has a purchase pattern similar to a supermarket that focuses on fresh products. Its total purchase of frozen product is significantly lower than the 25th percentile. </li>
+<li>The first sample (customer 5) has a purchase pattern similar to a cafe. The purchase of milk is higher than the 75th percentile of the milk category and the purchase of frozen food is lower than the 25th percentile of the frozen category. The total purchase of grocery is only at the median of the grocery category. This customer maybe selling products produced using milk, such as coffee store, dessert cafe, etc. </li>
+<li>The second sample (customer 10) has a purchase pattern similar to a supermarket. The total purchase of grocery, frozen food, paper, and detergent products are higher than the 75th percentile of the Detergents_Paper category. This supermarket may have less emphasis on fresh products as its total purchase is close to the 25th percentile of the fresh category.</li>
+<li>The third sample (customer 25) has a purchase pattern similar to a supermarket that focuses on fresh products. Its total purchase of frozen product is significantly lower than the 25th percentile of the frozen category. </li>
 </ul>
 
 </div>
@@ -13776,8 +13776,8 @@ XAlHFARBEOTK/wBfd8f/w2PNAAAAAABJRU5ErkJggg==
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <p>I attempted to predict total grocery purchase.</p>
-<p>The R^2 is 0.66, indicating that there may be some correlation between the grocery feature and the other features.</p>
-<p>The grocery feature is not necessary for identifying customers' spending habits because it is correlated with one of the other features. Specifically, the total purchases of detergent and paper products is significantly more important than the others in predicting the the total grocery purchase (see the bar chart above). In addition, the scatter plot between 'grocery' and 'detergents_paper' shows a strong correlation between these features. Furthermore, the scatter plot between the true and predicted total grocery purchase indicates that the model captures the general trend, but the model fitting is not great. If we were to focus on the regression, perhaps we could try other regression algorithms, such as polynomial, SVR, KNN Regression, and others.</p>
+<p>The $R^{2}$ is 0.66, indicating that there may be some correlation between the grocery feature and the other features.</p>
+<p>The grocery feature is not necessary for identifying customers' spending habits because it is correlated with at least one of the other features. Specifically, the total purchases of detergent and paper products is significantly more important than the others in predicting the the total grocery purchase according to the Decision Tree Regression(see the bar chart above). In addition, the scatter plot between 'grocery' and 'detergents_paper' shows a strong correlation between these features. Furthermore, the scatter plot between the true and predicted total grocery purchase indicates that the model captures the general trend, but the model fitting is not great. If we were to focus on the regression, perhaps we could try other regression algorithms, such as polynomial, SVR, KNN Regression, and others.</p>
 
 </div>
 </div>
@@ -22410,7 +22410,7 @@ rkJggg==
 <h3 id="Observation">Observation<a class="anchor-link" href="#Observation">&#182;</a></h3><p>Once we have the original feature projections (in red), it is easier to interpret the relative position of each data point in the scatterplot. For instance, a point the lower right corner of the figure will likely correspond to a customer that spends a lot on <code>'Milk'</code>, <code>'Grocery'</code> and <code>'Detergents_Paper'</code>, but not so much on the other product categories.</p>
 <p>From the biplot, which of the original features are most strongly correlated with the first component? What about those that are associated with the second component? Do these observations agree with the pca_results plot you obtained earlier?</p>
 <p><strong>Answer</strong></p>
-<p>The first principal component is strongly correlated with <code>Detergents_Paper</code>, <code>Grocery</code>, and <code>Milk</code>. The second principal component is strongly correlated with <code>Delicatessen</code>, <code>Fresh</code>, and <code>Frozen</code>. This correlation aligns with the PCA plot. In fact, the weights shown on the PCA plot are the PC1 and PC2 coordinates of the arrows.</p>
+<p>The first principal component is strongly correlated with <code>Detergents_Paper</code>, <code>Grocery</code>, and <code>Milk</code>. The second principal component is strongly correlated with <code>Delicatessen</code>, <code>Fresh</code>, and <code>Frozen</code>. This correlation aligns with the <code>pca_results</code> plot. In fact, the weights shown on the <code>pca_results</code> plot are the PC1 and PC2 coordinates of the arrows.</p>
 
 </div>
 </div>
@@ -22463,7 +22463,7 @@ rkJggg==
 <ul>
 <li>When there is insufficient number of data points per cluster, it may be difficult for the algorithm to converge.</li>
 </ul>
-<p>Based on the above properties, I will choose Gaussian Mixture Model because the above PCA plot does not clearly show spherical and equally distributed clusters, indicating that this dataset may be less suitable for K-Means.</p>
+<p>Based on the above properties, I will choose Gaussian Mixture Model because the above biplot does not clearly show spherical and equally distributed clusters, indicating that this dataset may be less suitable for K-Means.</p>
 <p><strong>References</strong></p>
 <ul>
 <li><a href="http://varianceexplained.org/r/kmeans-free-lunch/">http://varianceexplained.org/r/kmeans-free-lunch/</a></li>
@@ -24028,7 +24028,7 @@ FKiIiOilVwDH3qr4Df2UOwAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>In order to compare the two clusters, Segment 0 and Segment 1, I add <code>true_centers</code> data points on the box plot of the dataset (see the above plot).</p>
+<p>In order to compare the two clusters, Segment 0 and Segment 1, <code>true_centers</code> data points are added to the box plot of the dataset (see the above plot).</p>
 <p>Segment 0 is characterized by high purchase of milk, grocery, detergents, and paper products. Customers in this segment could represent supermarket/grocery store type of establishments.</p>
 <p>Segment 1 is characterized by ~50th - 75th percentile purchase of fresh and frozen products, as well as below 50th percentile purchase of the other product categories. Customers in this segment could represent restaurant or cafe types of establishments.</p>
 
@@ -24089,7 +24089,7 @@ Sample point 2 predicted to be in Cluster 0
 <li>Customer 10: Segment 0</li>
 <li>Customer 25: Segment 0</li>
 </ul>
-<p>This clustering (Question 8) agrees with the prediction based on comparing the total purchase in each category of the sample customers with (Question 1).</p>
+<p>This clustering (Question 8) agrees with the prediction based on comparing the total purchase of the sample customers in each category with the summary statistics of the whole dataset (Question 1).</p>
 
 </div>
 </div>
@@ -24868,8 +24868,8 @@ SUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>The clustering algorithm and the number of clusters I chose match with the underlying distribution of <code>Hotel/Restaurant/Cafe</code> and <code>Retailer</code> customers. In my analysis, Segment 0 represents supermarket/grocery type of establishment, while Segment 1 represents restaurant/cafe type of establishment.</p>
-<p>The above PCA plots show some overlaps between the two clusters. Those customers in these overlapping regions cannot be classified as purely Segment 0 (<code>Retailer</code>) or Segment 1 (<code>Hotel/Restaurant/Cafe</code>) in this reduced 2D space. However, those customers on the far left can be considered as purely Segment 0 (<code>Retailer</code>) and those on the far right can be considered as purely Segment 1 (<code>Hotel/Restaurant/Cafe</code>).</p>
+<p>The clustering algorithm and the number of clusters chosen match with the underlying distribution of <code>Hotel/Restaurant/Cafe</code> and <code>Retailer</code> customers. In my analysis, Segment 0 represents supermarket/grocery type of establishment, while Segment 1 represents restaurant/cafe type of establishment.</p>
+<p>The above plot show some overlaps between the two clusters. Those customers in these overlapping regions cannot be classified as purely Segment 0 (<code>Retailer</code>) or Segment 1 (<code>Hotel/Restaurant/Cafe</code>) in this reduced 2D space. However, those customers on the far left can be considered as purely Segment 0 (<code>Retailer</code>) and those on the far right can be considered as purely Segment 1 (<code>Hotel/Restaurant/Cafe</code>).</p>
 
 </div>
 </div>
